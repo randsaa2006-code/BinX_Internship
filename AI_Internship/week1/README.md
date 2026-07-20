@@ -1,3 +1,1 @@
-**Summary:** This week I set up a reproducible Python environment, practiced core
-Python (functions, list comprehensions, OOP), and started building the data-science
-toolkit (NumPy, Pandas, Matplotlib) that the rest of the internship builds on.
+**Summary:** This week, I set up a reproducible Python environment, practiced core Python concepts (functions, list comprehensions, and OOP), and started building the data science toolkit with NumPy, Pandas, and Matplotlib as the foundation for the rest of the internship.
