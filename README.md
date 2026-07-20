@@ -1,1 +1,3 @@
-This repository documents my work during a 10-week, 400-hour AI/ML internship at BinX Tech. Each week focuses on a core data-science or machine-learning skill — starting with Python fundamentals, NumPy, Pandas, and Matplotlib, and building up toward full ML projects. Every week has its own folder with daily notebooks, resources, and a short README explaining what was covered and what each file contains.
+**Summary:** This week I set up a reproducible Python environment, practiced core
+Python (functions, list comprehensions, OOP), and started building the data-science
+toolkit (NumPy, Pandas, Matplotlib) that the rest of the internship builds on.
