@@ -1,0 +1,67 @@
+# 🧠 Day 1 — Unsupervised Learning & K-Means
+
+**BinX Tech • AI & Machine Learning Internship • Week 5**
+
+## 📖 Overview
+
+This notebook covers my first day working with **unsupervised learning**. Unlike Weeks 3–4, where every model learned from a known target `y`, today's work has no labels at all — the goal is to discover natural structure in the data on its own, using **K-Means clustering** on the Mall Customer Segmentation dataset.
+
+## 🎯 Learning Objectives
+
+By the end of this notebook, I am able to:
+
+- Explain how unsupervised learning differs from supervised learning.
+- Run K-Means clustering and interpret the resulting clusters and centroids.
+- Choose the number of clusters `k` using the elbow method and silhouette score.
+- Explain why scaling is necessary before distance-based clustering.
+
+## 📌 Topics Covered
+
+- Supervised vs. unsupervised learning
+- What clustering does
+- K-Means: the centroid-assignment loop
+- Choosing `k`: the elbow method
+- Choosing `k`: the silhouette score
+- Scaling before clustering
+
+## 📊 Dataset
+
+**Mall Customer Segmentation Dataset** (Kaggle, `vjchoudhary7/customer-segmentation-tutorial-in-python`) — 200 customer records with `CustomerID`, `Gender`, `Age`, `Annual Income (k$)`, and `Spending Score (1-100)`.
+
+Data quality checks (no missing values, no duplicates, all ranges plausible) were run before clustering, since without a target column there is no later evaluation step that would otherwise expose a data problem.
+
+Clustering features used: **Age, Annual Income, Spending Score** (numeric only, per the lab requirement). `CustomerID` was excluded as an arbitrary identifier, and `Gender` was excluded as categorical.
+
+## 🖥️ Hands-On Lab
+
+1. Loaded and scaled the dataset (`StandardScaler`) on the three numeric features.
+2. Ran K-Means for `k = 1` through `10` and plotted inertia to identify the elbow.
+3. Compared silhouette scores for the top two elbow candidates (`k=4`, `k=5`).
+4. Fit the final K-Means model and visualized the clusters in 2D (Income vs. Spending Score).
+5. Interpreted each cluster using original-scale feature means.
+
+As an additional check beyond the lab requirement, I also computed the silhouette score across the full `k=2..10` range to confirm the chosen `k` was competitive — without silently overriding the elbow-based candidate selection rule.
+
+## 🔑 Key Findings
+
+- **Elbow method** pointed to `k=4` or `k=5` as reasonable candidates.
+- **Silhouette scores:** k=4 → 0.404, k=5 → 0.417 → **k=5 selected**.
+- Final model: **5 clusters**, inertia = 168.25, silhouette score = **0.4166**.
+- The full-range check (k=2..10) showed k=6 scores marginally higher (0.428), but I kept k=5 since the lab procedure specifies choosing between the top two elbow candidates — changing the rule after seeing a broader diagnostic would undermine the evaluation method itself.
+- The five segments separate meaningfully by income and spending behavior (e.g. a younger, high-income/high-spending group vs. an older, low-income/low-spending group), and remain interpretable once mapped back to original units.
+
+## 🛠 Tools Used
+
+Scikit-learn (`KMeans`, `StandardScaler`, `silhouette_score`) • Pandas • NumPy • Matplotlib • Jupyter Notebook
+
+## 📤 GitHub Submission
+
+Notebook and dataset committed to `randsaa2006-code/BinX_Internship`, under Week 5 / Day 1, alongside this README.
+
+## 💭 Reflection
+
+This day changed how I think about model evaluation compared to the supervised workflow from Week 4. There's no target column to tell me whether a customer was assigned to the "correct" segment — instead I had to combine quantitative evidence (inertia, silhouette) with judgment about what the discovered groups actually represent. The biggest practical lesson was that scaling is not optional here: K-Means is entirely distance-based, so leaving Income on a raw 15–137 scale next to Age would have let it dominate the clustering.
+
+## ✅ Conclusion
+
+Today I learned the core unsupervised learning workflow: scale first, use the elbow method to narrow candidate `k` values, confirm with silhouette score, then interpret the final clusters using their real-world feature means rather than the plot alone. I'm carrying forward the same standard I set in Week 4 — documenting *why* a choice was made, not just what the choice was.
