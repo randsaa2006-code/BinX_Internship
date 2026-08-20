@@ -6,6 +6,8 @@
 
 This is a planning day, not a technical one — it closes Phase 2 by selecting my Phase 3 capstone project and planning its first sprint. There's no dataset and no executable code today; the notebook documents the decision, the problem statement, the Definition of Done, and the Sprint 1 plan entirely in Markdown. Implementation begins in Week 6.
 
+**Capstone repository:** [Fraud-Detection-Capstone](https://github.com/randsaa2006-code/Fraud-Detection-Capstone/tree/main)
+
 ## 🎯 Learning Objectives
 
 By the end of today, I am able to:
@@ -43,7 +45,7 @@ Mentor consultation • GitHub (repository + branches) • Sprint backlog • Ju
 
 ## 📤 GitHub Submission
 
-Notebook committed to `randsaa2006-code/BinX_Internship`, under Week 5 / Day 5, alongside this README. The separate capstone repository (`Fraud-Detection-Capstone`) was also created today, containing `README.md`, `PROBLEM_STATEMENT.md`, `SPRINT1_BACKLOG.md`, `requirements.txt`, and the `notebooks/`, `models/`, `outputs/` folder structure, with a `feature/sprint1-dataset-selection` branch ready for Week 6.
+Notebook committed to `randsaa2006-code/BinX_Internship`, under Week 5 / Day 5, alongside this README. The separate capstone repository, [Fraud-Detection-Capstone](https://github.com/randsaa2006-code/Fraud-Detection-Capstone/tree/main), was also created today, containing `README.md`, `PROBLEM_STATEMENT.md`, `SPRINT1_BACKLOG.md`, `requirements.txt`, and the `notebooks/`, `models/`, `outputs/` folder structure, with a `feature/sprint1-dataset-selection` branch ready for Week 6.
 
 ## 💭 Reflection
 
